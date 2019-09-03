@@ -8,3 +8,5 @@ This is a play area for sybase to oracle migration
 -  mv ~/Downloads/linuxx64_12201_database.zip $(pwd)/docker-images/OracleDatabase/SingleInstance/dockerfiles/12.2.0.1/
 - cd cd $(pwd)/docker-images/OracleDatabase/SingleInstance/dockerfiles/
 -  ./buildDockerImage.sh -v 12.2.0.1 -e
+- - yield image name 
+- - oracle/database:12.2.0.1-ee
