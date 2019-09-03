@@ -44,14 +44,13 @@ services:
       SYBASE_USER: sa
       SYBASE_PASSWORD: password
   dboracle:
-    image: jaschweder/sybase:latest
+    image: oracle/database:12.2.0.1-ee
     restart: unless-stopped
     ports:
-      - 2638:2638
+      - 1521:1521
+      - 5500:5500 
     environment:
-      SYBASE_USER: guest
-      SYBASE_PASSWORD: guest1234
-      SYBASE_DB: guest
-      #Admin user
-      SYBASE_USER: sa
-      SYBASE_PASSWORD: passwork
+      #ORACLE_SID: dev
+      #ORACLE_PDB: docker1
+      ORACLE_PWD: Docker12345
+      ORACLE_CHARACTERSET: 'UTF8' 
