@@ -12,15 +12,17 @@ This is a play area for sybase to oracle migration
 - https://www.oracle.com/database/technologies/oracle12c-linux-12201-downloads.html#license-lightbox
 # Move file into path in git project repo
 -  mv ~/Downloads/linuxx64_12201_database.zip $(pwd)/docker-images/OracleDatabase/SingleInstance/dockerfiles/12.2.0.1/
-#cd into the top level of the git project directory
 # Build the local Docker Image
+- cd into root of project then run the follow lines
 - cd $(pwd)/docker-images/OracleDatabase/SingleInstance/dockerfiles/
 -  ./buildDockerImage.sh -v 12.2.0.1 -e
-- - yield image name 
+- - yields image name 
 - - oracle/database:12.2.0.1-ee
  
 # Open Project in Visual Studio Code
 - Click on open in container
-
+# Run Test
+- Inside cli run: 
+- pytest tests -vv
 # NB:
 - Make sure you set the memory to more than 2gb in your docker preference 
