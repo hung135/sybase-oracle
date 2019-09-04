@@ -45,9 +45,7 @@ RUN apt-get update \
 #oracle client tools you may have to update this if oracle changes this endpoint
 RUN wget https://download.oracle.com/otn_software/linux/instantclient/193000/oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm 
 RUN wget https://download.oracle.com/otn_software/linux/instantclient/193000/oracle-instantclient19.3-sqlplus-19.3.0.0.0-1.x86_64.rpm
-RUN alien oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm \
-    && dpkg -i oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.deb \
-    && alien oracle-instantclient19.3-sqlplus-19.3.0.0.0-1.x86_64.rpm \
-    && dpkg -i oracle-instantclient19.3-sqlplus-19.3.0.0.0-1.x86_64.deb
+RUN alien -i oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm \
+    && alien -i oracle-instantclient19.3-sqlplus-19.3.0.0.0-1.x86_64.rpm 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
