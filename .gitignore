@@ -1,0 +1,5 @@
+*test*cache*
+__pycache__
+*.rpm
+*.pyc
+oracle-instantclient*

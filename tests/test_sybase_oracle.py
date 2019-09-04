@@ -17,8 +17,9 @@ oracle_conn = None  # need to install oracle python libraryyy
 def test_connect_oracle():
     
     from sqlalchemy import create_engine, inspect
-    engine = create_engine("oracle+cx_oracle://pdadmin:Docker12345@dboracle/ORCLPDB1")
+    engine = create_engine("oracle+cx_oracle://system:Docker12345@dboracle/ORCLCDB")
     inspector = inspect(engine)
+    assert True
     #all_check_constraints = inspector.get_check_constraints(
     #    "some_table", include_all=True)
 
