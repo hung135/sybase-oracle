@@ -1,0 +1,5 @@
+pytest
+cx_oracle
+sqlalchemy
+#https://docs.sqlalchemy.org/en/13/dialects/sybase.html
+#https://docs.sqlalchemy.org/en/13/dialects/oracle.html
