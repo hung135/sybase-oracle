@@ -22,3 +22,5 @@ This is a play area for sybase to oracle migration
 # Open Project in Visual Studio Code
 - Click on open in container
 
+# NB:
+- Make sure you set the memory to more than 2gb in your docker preference 
