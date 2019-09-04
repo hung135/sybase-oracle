@@ -48,4 +48,5 @@ RUN wget https://download.oracle.com/otn_software/linux/instantclient/193000/ora
 RUN alien -i oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm \
     && alien -i oracle-instantclient19.3-sqlplus-19.3.0.0.0-1.x86_64.rpm 
 # Switch back to dialog for any ad-hoc use of apt-get
+ENV LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib/
 ENV DEBIAN_FRONTEND=dialog
