@@ -1,0 +1,11 @@
+[dbsybasedsn]
+Description=Sybase ODBC Data Source
+UserID=sa
+Password=password
+ 
+Driver = /client1600/lib64/libdbicu16.so
+ 
+Server=dbsybase
+Port=4100
+Database=guest
+UseCursor=1
