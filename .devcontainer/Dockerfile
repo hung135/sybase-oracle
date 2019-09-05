@@ -27,14 +27,14 @@ RUN apt-get update \
     && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" \
     && apt-get update \
     && apt-get install -y docker-ce-cli fish vim postgresql-client \
-    && apt-get install -y build-essential unzip python-dev libaio-dev alien \
+    && apt-get install -y build-essential unzip python-dev libaio-dev alien wget unixodbc-dev \
     #
     # Install Docker Compose
     && curl -sSL "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
     && chmod +x /usr/local/bin/docker-compose \
     #
     # Pylint
-    && pip --disable-pip-version-check --no-cache-dir install pylint wget unixodbc-dev  \
+    && pip --disable-pip-version-check --no-cache-dir install pylint  \
     #
     # Pip items
     && if [ -f "/tmp/pip-tmp/requirements.txt" ]; then pip --disable-pip-version-check --no-cache-dir install -r /tmp/pip-tmp/requirements.txt; fi \
@@ -51,7 +51,7 @@ RUN alien -i oracle-instantclient19.3-basic-19.3.0.0.0-1.x86_64.rpm \
 #https://archive.sap.com/documents/docs/DOC-35857
 RUN wget http://d5d4ifzqzkhwt.cloudfront.net/sqla16client/sqla16_client_linux_x86x64.tar.gz
 RUN tar -C .. -xvf sqla16_client_linux_x86x64.tar.gz
-RUN odbcinst -i -d -f driver template file
+#RUN odbcinst -i -d -f /workspace/sybasetemplate.txt
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV LD_LIBRARY_PATH=/usr/lib/oracle/19.3/client64/lib/
 ENV DEBIAN_FRONTEND=dialog
